@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from decouple import  config
+from os import path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -71,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project.wsgi.application'
+WSGI_APPLICATION = 'python_vercel_task.wsgi.app'
 
 
 # Database
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # ...
 # environ sirve para cargar las variables de entorno del sistema
 
-from os import path
+
 # ...
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 # ...
